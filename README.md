@@ -30,13 +30,59 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
-2. Describe the different phases of the component lifecycle.
+- Following the C.C.R. (class, constructor, render) we can start off by setting up the class.
+- Inside the class component we can call the constructor, link the react methods with super(), and initiate state;
+- Finally we can call render()
 
+```
+  class App extends React.componenet{
+    constructor () {
+      super()
+      this.state = {}
+    }
+
+    render() {}
+  }
+
+```
+
+2. Describe the different phases of the component lifecycle.
+   The three phases of a component life cycle are Mount, Update, Unmount
+   - A component mount and renders and data passed throught it in the begining of the lifecylcle.
+   - If a component receives any new data it will Update
+   - Finally the componenet will unmount at the end of the lifecycle
+   ```
+     componentDidMount() {}
+     componentDidUpdate() {}
+     componentWillUnmount() {}
+   ```
 3. Demonstrate an understanding of class component lifecycle methods.
+   When calling `componentDidMount() {}` you are able to pass anything into that, and itll render once the component mount. for example. if you want to do a fetch, you would want to pass the fetch inside the `componentDidMount()` becuase it only renders once the component is mounted.
 
 4. Define stateful logic.
+   Having stateful logic allows us to create custom hooks that can be reused in our code.
 
 5. Describe how to test a React component with React Testing Library.
+
+   - First start off by giving your test a description.
+   - Following the `AAA (Arrange, Act, Assert)` we can first arrange our variables
+   - We can set up out fireEvents
+   - And Finally we can assert (to expect something to complete successfully/unsuccessfully)
+
+   ```
+    test('form shows success message on submit with form details', () => {
+      render(<CheckoutForm />);
+
+      fireEvent.change(screen.getByTestId(/input-content/i), {
+        target: { value: 'Tim' },
+      });
+      fireEvent.click(screen.getByText(/Checkout Now/i));
+
+      screen.getByText(/tim/i);
+    });
+   ```
+
+````
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -124,12 +170,12 @@ After finishing your required elements, you can push your work further. These go
 ```js
 const plants = {{}, {}, {}} // with each object being a mock plant
 test("displays plants in cart", () => {
-  const { getByText } = render(<ShoppingCart cart={plants} />)
+const { getByText } = render(<ShoppingCart cart={plants} />)
 
-  ...
+...
 
 })
-```
+````
 
 ## Submission format
 
