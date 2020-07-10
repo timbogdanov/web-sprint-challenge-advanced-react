@@ -34,16 +34,15 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 - Inside the class component we can call the constructor, link the react methods with super(), and initiate state;
 - Finally we can call render()
 
-```
-  class App extends React.componenet{
-    constructor () {
-      super()
-      this.state = {}
-    }
-
-    render() {}
+```jsx
+class App extends React.componenet {
+  constructor() {
+    super();
+    this.state = {};
   }
 
+  render() {}
+}
 ```
 
 2. Describe the different phases of the component lifecycle.
@@ -69,17 +68,17 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
    - We can set up out fireEvents
    - And Finally we can assert (to expect something to complete successfully/unsuccessfully)
 
-   ```
-    test('form shows success message on submit with form details', () => {
-      render(<CheckoutForm />);
+   ```js
+   test('form shows success message on submit with form details', () => {
+     render(<CheckoutForm />);
 
-      fireEvent.change(screen.getByTestId(/input-content/i), {
-        target: { value: 'Tim' },
-      });
-      fireEvent.click(screen.getByText(/Checkout Now/i));
+     fireEvent.change(screen.getByTestId(/input-content/i), {
+       target: { value: 'Tim' },
+     });
+     fireEvent.click(screen.getByText(/Checkout Now/i));
 
-      screen.getByText(/tim/i);
-    });
+     screen.getByText(/tim/i);
+   });
    ```
 
 ````
