@@ -50,7 +50,7 @@ class App extends React.componenet {
    - A component mount and renders and data passed throught it in the begining of the lifecylcle.
    - If a component receives any new data it will Update
    - Finally the componenet will unmount at the end of the lifecycle
-   ```
+   ```js
      componentDidMount() {}
      componentDidUpdate() {}
      componentWillUnmount() {}
@@ -64,6 +64,7 @@ class App extends React.componenet {
 5. Describe how to test a React component with React Testing Library.
 
    - First start off by giving your test a description.
+   - Render what you're testing
    - Following the `AAA (Arrange, Act, Assert)` we can first arrange our variables
    - We can set up out fireEvents
    - And Finally we can assert (to expect something to complete successfully/unsuccessfully)
