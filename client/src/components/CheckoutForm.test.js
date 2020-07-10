@@ -11,10 +11,11 @@ test('form header renders', () => {
 
 test('form shows success message on submit with form details', () => {
   render(<CheckoutForm />);
-  const firstnameInput = screen.getByTestId(/input-content/i);
-  const submitButton = screen.getByText(/Checkout Now/i);
-  fireEvent.change(firstnameInput, { target: { value: 'Tim' } });
-  fireEvent.click(submitButton);
+
+  fireEvent.change(screen.getByTestId(/input-content/i), {
+    target: { value: 'Tim' },
+  });
+  fireEvent.click(screen.getByText(/Checkout Now/i));
 
   screen.getByText(/tim/i);
 });
