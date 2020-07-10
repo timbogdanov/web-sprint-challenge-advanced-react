@@ -28,7 +28,7 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. Explain how to build stateful class components.
+\*\*\*1. Explain how to build stateful class components.
 
 - Following the C.C.R. (class, constructor, render) we can start off by setting up the class.
 - Inside the class component we can call the constructor, link the react methods with super(), and initiate state;
@@ -45,42 +45,45 @@ class App extends React.componenet {
 }
 ```
 
-2. Describe the different phases of the component lifecycle.
-   The three phases of a component life cycle are Mount, Update, Unmount
-   - A component mount and renders and data passed throught it in the begining of the lifecylcle.
-   - If a component receives any new data it will Update
-   - Finally the componenet will unmount at the end of the lifecycle
-   ```js
-     componentDidMount() {}
-     componentDidUpdate() {}
-     componentWillUnmount() {}
-   ```
-3. Demonstrate an understanding of class component lifecycle methods.
-   When calling `componentDidMount() {}` you are able to pass anything into that, and itll render once the component mount. for example. if you want to do a fetch, you would want to pass the fetch inside the `componentDidMount()` becuase it only renders once the component is mounted.
+\*\*\*2. Describe the different phases of the component lifecycle.
+The three phases of a component life cycle are Mount, Update, Unmount
 
-4. Define stateful logic.
-   Having stateful logic allows us to create custom hooks that can be reused in our code.
+- A component mount and renders and data passed throught it in the begining of the lifecylcle.
+- If a component receives any new data it will Update
+- Finally the componenet will unmount at the end of the lifecycle
 
-5. Describe how to test a React component with React Testing Library.
+```js
+  componentDidMount() {}
+  componentDidUpdate() {}
+  componentWillUnmount() {}
+```
 
-   - First start off by giving your test a description.
-   - Render what you're testing
-   - Following the `AAA (Arrange, Act, Assert)` we can first arrange our variables
-   - We can set up out fireEvents
-   - And Finally we can assert (to expect something to complete successfully/unsuccessfully)
+\*\*\*3. Demonstrate an understanding of class component lifecycle methods.
+When calling `componentDidMount() {}` you are able to pass anything into that, and itll render once the component mount. for example. if you want to do a fetch, you would want to pass the fetch inside the `componentDidMount()` becuase it only renders once the component is mounted.
 
-   ```js
-   test('form shows success message on submit with form details', () => {
-     render(<CheckoutForm />);
+\*\*\*4. Define stateful logic.
+Having stateful logic allows us to create custom hooks that can be reused in our code.
 
-     fireEvent.change(screen.getByTestId(/input-content/i), {
-       target: { value: 'Tim' },
-     });
-     fireEvent.click(screen.getByText(/Checkout Now/i));
+\*\*\*5. Describe how to test a React component with React Testing Library.
 
-     screen.getByText(/tim/i);
-   });
-   ```
+- First start off by giving your test a description.
+- Render what you're testing
+- Following the `AAA (Arrange, Act, Assert)` we can first arrange our variables
+- We can set up out fireEvents
+- And Finally we can assert (to expect something to complete successfully/unsuccessfully)
+
+```js
+test('form shows success message on submit with form details', () => {
+  render(<CheckoutForm />);
+
+  fireEvent.change(screen.getByTestId(/input-content/i), {
+    target: { value: 'Tim' },
+  });
+  fireEvent.click(screen.getByText(/Checkout Now/i));
+
+  screen.getByText(/tim/i);
+});
+```
 
 ````
 
