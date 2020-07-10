@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from '../hooks/useForm';
 
 const initialValue = {
@@ -23,10 +23,12 @@ const CheckoutForm = (props) => {
     <>
       <form onSubmit={handleSubmit}>
         <h2>Checkout Form</h2>
-        <label>
+        <label htmlFor='firstname' aria-label='firstname'>
           First Name:
           <input
+            id='firstname'
             name='firstName'
+            data-testid='input-content'
             value={values.firstName}
             onChange={handleChanges}
           />
@@ -59,7 +61,7 @@ const CheckoutForm = (props) => {
           Zip:
           <input name='zip' value={values.zip} onChange={handleChanges} />
         </label>
-        <button>Checkout</button>
+        <button>Checkout Now</button>
       </form>
 
       {showSuccessMessage && (
